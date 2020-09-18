@@ -34,7 +34,7 @@ describe "CSV and Enumerables Exercise" do
         # Check that each element in the array is a hash
         expect(athlete).must_be_instance_of Hash
 
-        # Check that each Olympian hash has the necessary keys
+        # Check that each Olympian has the necessary keys
         #   (defined in the constant REQUIRED_OLYMPIAN_FIELDS above)
         expect(athlete.keys.length).must_equal REQUIRED_OLYMPIAN_FIELDS.length
         REQUIRED_OLYMPIAN_FIELDS.each do |required_field|

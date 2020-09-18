@@ -12,6 +12,7 @@ def get_all_olympic_athletes(filename)
   return filtered_keys
 end
 # p get_all_olympic_athletes('../data/athlete_events.csv')
+
 def total_medals_per_team(olympic_data)
   medal_hash = Hash.new(0)
   olympic_data.each do |athlete|
@@ -21,12 +22,20 @@ def total_medals_per_team(olympic_data)
   end
   return medal_hash
 end
-
+# olympic_data = get_all_olympic_athletes('../data/athlete_events.csv')
 # p total_medals_per_team(olympic_data)
 
 def get_all_gold_medalists(olympic_data)
+  gold_arr = []
+  olympic_data.each do |athlete|
+    if athlete["Medal"] == "Gold"
+      gold_arr << athlete
+    end
+  end
+  return gold_arr
 end
-
+olympic_data = get_all_olympic_athletes('../data/athlete_events.csv')
+p get_all_gold_medalists(olympic_data)
 
 #1-
 # -the get_all_olympic_athletes method get a file path and return array
